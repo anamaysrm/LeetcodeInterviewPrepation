@@ -1,6 +1,8 @@
 Leetcode -> 1684. Count the Number of Consistent Strings
 Link -> https://leetcode.com/problems/count-the-number-of-consistent-strings/description/?envType=daily-question&envId=2024-09-12
 
+Please try a different approach as well using BIT MANIPULATION.
+
 Approcach 1 ->
 
    fun countConsistentStrings(allowed: String, words: Array<String>): Int {
