@@ -1,6 +1,8 @@
 Leetcode -> 2501
 Link-> https://leetcode.com/problems/longest-square-streak-in-an-array/?envType=daily-question&envId=2024-10-28
 
+Explore using Map as well.
+
 Approach 1 -> Using Set 
 
   class Solution {
