@@ -41,5 +41,43 @@ class Solution {
 T.C -> O(3^(n*m))
 S.C -> O(n) (n is the column)
 
-Approach 2 ->
-  
+Approach 2 -> Dp Approach Top Down approach.
+
+    class Solution {
+    fun maxMoves(grid: Array<IntArray>): Int {
+     val m = grid.size
+     val n = grid[0].size 
+     var maxMoves = 0
+
+     val memo = Array<IntArray>(m) {IntArray(n) {-1}}
+      for(i in 0 until m) {
+       maxMoves = Math.max(maxMoves,helper(i, 0, grid, memo))
+      }
+    return maxMoves   
+    }
+
+    fun helper(row : Int, col:Int, grid : Array<IntArray>, memo : Array<IntArray>) : Int {
+
+        if(memo[row][col]!=-1) return memo[row][col]
+
+        var maxMove = 0
+
+        if(row-1>=0 && col+1<grid[0].size && grid[row-1][col+1]>grid[row][col]) {
+         maxMove = 1 + helper(row-1, col+1, grid, memo)
+         }
+        
+        if(col+1<grid[0].size && grid[row][col+1]>grid[row][col]) {
+            maxMove = Math.max(maxMove, 1 + helper(row,col+1, grid, memo))
+        }
+
+        if(row+1<grid.size && col+1<grid[0].size && grid[row+1][col+1]>grid[row][col]) {
+          maxMove = Math.max(maxMove,1 + helper(row+1, col+1, grid, memo))
+        }
+        memo[row][col] = maxMove 
+        return memo[row][col]
+    }
+}
+
+T.C -> O(3(m*n)) ->O(mn)
+S.C -> o(m*n)
+    
