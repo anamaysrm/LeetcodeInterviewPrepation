@@ -39,7 +39,7 @@ class Solution {
 }
 
 T.C -> O(3^(n*m))
-S.C -> O(n*m)
+S.C -> O(n) (n is the column)
 
 Approach 2 ->
   
